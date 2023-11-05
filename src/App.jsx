@@ -1,8 +1,17 @@
+import ContentCard from './components/ContentCard';
+import ProfileCard from './components/ProfileCard';
+import Navbar from './components/Navbar';
+
+import { useState } from 'react';
 
 export default function App() {
+  const [activeTab, setActiveTab] = useState("Home");
+
   return (
     <>
-      <h1>This is the App</h1>
+      <Navbar setActiveTab={setActiveTab}/>
+      <ProfileCard />
+      <ContentCard activeTab={activeTab}/>
     </>
   )
 }
