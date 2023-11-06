@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* my defined values */
+  --profile-width-percent: 28%;
 }
 
 a {
@@ -30,7 +35,8 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #8BFFBA;
+  background: linear-gradient(226deg, #9EF475 19.5%, #D4FFC0 44.18%, rgba(192, 255, 198, 0.00) 95.62%);
+
 }
 
 h1 {
@@ -50,7 +56,8 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #0F6;
+  color: #0F6;
 }
 button:focus,
 button:focus-visible {
@@ -79,25 +86,49 @@ button:focus-visible {
   height: 100vh;
 }
 
-.nav--container {
+.nav__container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   width: 5%;
   margin-left: 15px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 5px 10px;
   border-radius: 40px;
   background-color: #535353;
 }
 
-.nav--container ul {
+.nav__container ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
   margin: 0;
   padding: 0;
   list-style: none;
-  align-self: flex-start;
+  align-self: center;
+  justify-content: center;
 }
 
-.main--container {
+.nav__container button {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.nav__container button:hover {
+  border-color: transparent;
+  color: #0F6;
+}
+
+.main {
   display: flex;
   height: 75%;
   width: 75%;
@@ -106,22 +137,109 @@ button:focus-visible {
   justify-content: space-between;
 }
 
-.main--profile {
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 30%;
+  width: var(--profile-width-percent);
   height: 100%;
 }
 
-.main--content {
+.profile__photo {
+  width: 60%;
+  height: 27%;
+  border-radius: 100%;
+  margin-top: 17%;
+  border: 6px solid white;
+}
+
+.profile__name {
+  display: flex;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0px 0px 5px 5px;
+  width: 100%;
+  justify-content: center;
+}
+
+.profile__title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0px;
+  font-family: Inter;
+  color: #D9D9D9;
+  line-height: normal;
+}
+
+.profile__button {
+  display: flex;
+  width: 100%;
+  margin-top: 80%;
+  border-radius: 30px;
+  border: 2px solid #FFF;
+  color: white;
+  background-color: #535353;
+}
+
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 70%;
+  width: calc(100% - var(--profile-width-percent));
   height: 100%;
   background-color: black;
   border-radius: 40px;
+  color: white;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.home__section {
+  display: flex;
+  height: 45%;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home__title {
+  margin-left: 5%;
+  margin-top: 5%;
+  font-size: 36px;
+}
+
+.home__title--green {
+  color: #0F6;
+}
+
+.home__text {
+  margin-left: 10%;
+  font-size: 20px;
+  margin-right: 5%;
+  line-height:24px;
+}
+
+.home__list {
+  margin-left: 5%;
+  font-size: 20px;
+  margin-right: 5%;
+  margin-top: 0px;
+  line-height:24px;
+}
+
+.home__list > li::marker {
+  font-size: 1.4rem;
+  color: #0F6;
 }

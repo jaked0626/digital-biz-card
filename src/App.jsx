@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <main className="container">
-        <div className="main--container">
+        <div className="main">
           <Profile />
           <ContentCard activeTab={activeTab}/>
         </div>

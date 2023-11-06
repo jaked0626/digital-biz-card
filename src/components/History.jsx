@@ -1,7 +1,7 @@
 export default function History() {
     return (
         <h1>
-            This is History.
+            This is my Career History! Coming Soon. 
         </h1>
     );
 }
