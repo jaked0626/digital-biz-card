@@ -1,5 +1,5 @@
 import ContentCard from './components/ContentCard';
-import ProfileCard from './components/ProfileCard';
+import Profile from './components/Profile';
 import Navbar from './components/Navbar';
 
 import { useState } from 'react';
@@ -9,9 +9,13 @@ export default function App() {
 
   return (
     <>
-      <Navbar setActiveTab={setActiveTab}/>
-      <ProfileCard />
-      <ContentCard activeTab={activeTab}/>
+      <main className="container">
+        <div className="main--container">
+          <Profile />
+          <ContentCard activeTab={activeTab}/>
+        </div>
+        <Navbar setActiveTab={setActiveTab}/>
+      </main>
     </>
   )
 }

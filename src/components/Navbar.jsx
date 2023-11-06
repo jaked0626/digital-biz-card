@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function Navbar({ setActiveTab }) {
     return (
-        <nav>
+        <nav className="nav--container">
             <ul>
                 <li>
                     <button onClick={() => setActiveTab('Home')}>Home</button>

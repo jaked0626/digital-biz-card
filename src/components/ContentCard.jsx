@@ -5,11 +5,11 @@ import History from './History';
 
 export default function ContentCard({ activeTab }) {
     return (
-        <main>
+        <div className="main--content">
             {activeTab === 'Home' && <Home />}
             {activeTab === 'Info' && <Info />}
             {activeTab === 'History' && <History />}
-        </main>
+        </div>
     );
 }
 
