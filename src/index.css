@@ -177,10 +177,27 @@ button:focus-visible {
   line-height: normal;
 }
 
+.profile__socials {
+  display: flex;
+  width: 60%;
+  justify-content: space-evenly;
+  margin-top: 0%;
+  font-size: 20px;
+}
+
+.profile__socials > a {
+  color: white;
+  cursor: pointer;
+}
+
+.profile__socials > a:hover {
+  color: #0F6;
+}
+
 .profile__button {
   display: flex;
   width: 100%;
-  margin-top: 80%;
+  margin-top: 50%;
   border-radius: 30px;
   border: 2px solid #FFF;
   color: white;
