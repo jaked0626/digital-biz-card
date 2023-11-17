@@ -34,7 +34,9 @@ body {
   align-items: center;
   justify-content: center;
   width: 100vw;
+  min-width: 1400px;
   height: 100vh;
+  min-height: 1000px;
   background: linear-gradient(226deg, #9EF475 19.5%, #D4FFC0 44.18%, rgba(192, 255, 198, 0.00) 95.62%);
 
 }
@@ -84,6 +86,9 @@ button:focus-visible {
   margin-top: 15%;
   width: 100vw;
   height: 100vh;
+  min-width: 1100px;
+  max-width: 1300px;
+  min-height: 500px;
 }
 
 .nav__container {
