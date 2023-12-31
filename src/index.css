@@ -17,6 +17,11 @@
 
   /* my defined values */
   --profile-width-percent: 28%;
+  --primary-color: #155831;
+  --secondary-color: #d7e4dc;
+  --background-color: #ffffff;
+  --accent-color: #c20002;
+
 }
 
 a {
@@ -133,6 +138,10 @@ button:focus-visible {
   color: #0F6;
 }
 
+.nav__container button:focus {
+  outline-color: #0F6;
+}
+
 .main {
   display: flex;
   height: 75%;
@@ -219,6 +228,7 @@ button:focus-visible {
   background-color: black;
   border-radius: 40px;
   color: white;
+  overflow: auto;
 }
 
 .home {
