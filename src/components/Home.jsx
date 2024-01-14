@@ -1,13 +1,20 @@
-export default function Home () {
+
+function AboutMe() {
   return(
-    <div className="home">
-    {/* <div className="home__section"> */}
-      <h1 className="home__title">
-        Hello <span className="home__title--green">World,</span>
-      </h1>
-      <p className="home__text">
-        I&#39;m Jake, a backend engineer and product manager in the making.
-        <br/>
+    <div className="home__aboutme">
+      <DescriptionText />
+      <Facts />
+    </div>
+  )
+}
+
+function DescriptionText() {
+  return(
+    <div className="home__aboutme--description home__text">
+      <p>
+        I&#39;m Jake, a backend engineer and product manager in the making :)
+        </p>
+<p>
         {/* My primary interest in life has always been the study of humans, what drives them, and how 
         these drives shape society. Product managment is the practice of identifying such drives
         and aiding in their realization through technical innovation. 
@@ -17,18 +24,67 @@ export default function Home () {
         understanding what drives people, the motives which shape our society. 
         Product creation and management, to me, is the practice of identifying said motives 
         and   */}
-        My primary interest has been the study of humans, what drives them. 
-        The human drive that tends towards fruition, almost as an independent and organic process. 
-        In their totality they are The absolute spirit journeying through history, 
-        in locality they manifest as fragments of the spirit&#39;s unwavering conviction 
-        pulling the strings behind every creative process. 
-        <br/>
-        Product management is the practice of identifying
+        I&#39;ve long been interested in what drives human activity. I guess it&#39;s 
+        natural that I went from studying social sciences in undergrad to product management in my career;
+        product management is the practice of identifying and aiding the fruition of human motivations, after all! 
+</p>
+<p>
+        Outside of work, I am a proud dog daddy and a reader of existentialist literature. 
       </p>
-    {/* </div> */}
+    </div>
+  )
+}
+
+function Facts() {
+  // get age 
+  const now = new Date();
+  const birthday = new Date(2000, 5, 26); // months are 0 indexed, stupidly
+  const millisecondsInYear = 1000 * 60 * 60 * 24 * 365.25; 
+  const age = Math.floor( (now - birthday) / millisecondsInYear );
+
+  // TODO: move to metadata 
+  let factsDic = {
+    "Age": age,
+    "Pronouns": "any :)",
+    "Residence": "Tokyo, Japan",
+    "Email": "jakez0626@gmail.com",
+    "Phone": "09014618440",
+  };
+  
+  let factsList = [];
+  for (const [factKey, factVal] of Object.entries(factsDic)) {
+    factsList.push(
+      <li>
+        <span className="home__text--accent">{factKey}:</span>
+        {factVal}
+      </li>
+    )
+    console.log(factsList);
+  }
+
+  return (
+    <div className="home__aboutme--facts home__text">
+      <ul>
+        {factsList}
+      </ul>
+    </div>
+  )
+}
+
+export default function Home() {
+  return(
+    <div className="home">
     {/* <div className="home__section"> */}
       <h1 className="home__title">
-        Some <span className="home__title--green">Facts</span>
+        {/* Hello World, */}
+        Hello <span className="home__title--accent">World!</span>
+      </h1>
+
+      <AboutMe />
+
+      <h1 className="home__title">
+        {/* Some Facts */}
+        Some <span className="home__title--accent">Facts</span>
       </h1>
       <ul className="home__list">
         <li>

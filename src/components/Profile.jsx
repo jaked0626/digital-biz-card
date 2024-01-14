@@ -3,7 +3,8 @@ import Socials from './Socials';
 
 export default function Profile() {
     const base = import.meta.env.BASE_URL;
-    const imagePath = `${base}profile.JPG`;
+    const profile = "smileprofilepixel.png";
+    const imagePath = `${base}${profile}`;
 
     return (
         <div className="profile">
