@@ -7,9 +7,9 @@ function DescriptionText() {
         I&#39;m Jake, a backend engineer and product manager in the making :)
       </p>
       <p>
-        I&#39;ve long been interested in what drives human activity. I guess it&#39;s 
-        natural that I went from studying social sciences in undergrad to product management in my career;
-        product management is the practice of identifying and aiding the fruition of human motivations, after all! 
+        I&#39;ve long been interested in what drives human activity. That&#39;s why in school I studied social
+        sciences and in my career I chose product management; a PM&#39;s job is to identify people&#39;s motivators and help them overcome 
+        obstacles, after all!
       </p>
       <p>
         Outside of work, I am a proud dog daddy and a reader with a penchant for the Russians and Postmodernism. 
