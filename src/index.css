@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter;
   line-height: 1.5;
   font-weight: 500;
 
@@ -328,6 +328,7 @@ button:focus-visible {
   justify-content: center;
   margin-top: 0px;
   font-family: Inter;
+  font-weight: 600;
   color: #D9D9D9;
   line-height: normal;
 }
@@ -392,8 +393,20 @@ button:focus-visible {
 
 .home__title {
   margin-left: 5%;
-  margin-top: 5%;
+  margin-top: 25px;
+  margin-bottom: 5px;
   font-size: 36px;
+  font-weight: 900;
+}
+
+.home__subtitle, .home__subtitle--accent {
+  margin-top: 5px;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+.home__subtitle--accent {
+  color: var(--accent-color);
 }
 
 .home__title--accent {
@@ -401,9 +414,7 @@ button:focus-visible {
 }
 
 .home__text, .home__text--accent {
-  /* margin-left: 10%; */
   font-size: 17px;
-  margin-right: 5%;
   line-height:24px;
 }
 
@@ -419,12 +430,28 @@ button:focus-visible {
 
 .home__aboutme--description {
   margin-left: 5%;
-  width: 60%;
+  width: 50%;
 }
 
 .home__aboutme--facts {
-  margin-right: 5%;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+  margin-left: 2%;
+  width: 50%;
+  align-items: center;
+}
+
+.home__aboutme--facts > img {
+  margin-top: 0;
+  height: auto; 
+  width: auto; 
+  max-width: 200px; 
+  max-height: 300px;
+}
+
+.home__aboutme--facts > ul {
+  list-style-type: None;
 }
 
 /* for vertical spacing of list items in facts */
@@ -445,6 +472,28 @@ button:focus-visible {
 
 .home__list > li::marker {
   font-size: 1.4rem;
+  color: var(--accent-color);
+}
+
+.home__skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.home__skills--box {
+  margin-top: 5px;
+  width: 50%;
+  padding: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.home__skills--box > i {
+  font-size: 48px;
+  margin-bottom: 8px;
   color: var(--accent-color);
 }
 

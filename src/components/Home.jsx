@@ -1,35 +1,18 @@
-
-function AboutMe() {
-  return(
-    <div className="home__aboutme">
-      <DescriptionText />
-      <Facts />
-    </div>
-  )
-}
+import PropTypes from 'prop-types';
 
 function DescriptionText() {
   return(
     <div className="home__aboutme--description home__text">
       <p>
         I&#39;m Jake, a backend engineer and product manager in the making :)
-        </p>
-<p>
-        {/* My primary interest in life has always been the study of humans, what drives them, and how 
-        these drives shape society. Product managment is the practice of identifying such drives
-        and aiding in their realization through technical innovation. 
-        My focus in life has always been social sciences; the study of what drives human 
-        activity and how it shapes society. Product management is the practice of identifying said 
-        motives and Coming from a social sciences background, my primary interest is in
-        understanding what drives people, the motives which shape our society. 
-        Product creation and management, to me, is the practice of identifying said motives 
-        and   */}
+      </p>
+      <p>
         I&#39;ve long been interested in what drives human activity. I guess it&#39;s 
         natural that I went from studying social sciences in undergrad to product management in my career;
         product management is the practice of identifying and aiding the fruition of human motivations, after all! 
-</p>
-<p>
-        Outside of work, I am a proud dog daddy and a reader of existentialist literature. 
+      </p>
+      <p>
+        Outside of work, I am a proud dog daddy and a reader with a penchant for the Russians and Postmodernism. 
       </p>
     </div>
   )
@@ -55,53 +38,108 @@ function Facts() {
   for (const [factKey, factVal] of Object.entries(factsDic)) {
     factsList.push(
       <li>
-        <span className="home__text--accent">{factKey}:</span>
+        <span className="home__text--accent">{factKey}: </span>
         {factVal}
       </li>
     )
-    console.log(factsList);
   }
 
   return (
-    <div className="home__aboutme--facts home__text">
       <ul>
         {factsList}
       </ul>
-    </div>
   )
 }
+
+function AboutImage() {
+  const base = import.meta.env.BASE_URL;
+  const image = "brownie-fullbody-pixel.png";
+  const imagePath = `${base}${image}`;
+  return(
+    <img src={imagePath} alt="my dog, brownie"/>
+  )
+}
+
+function AboutMe() {
+  return(
+    <>
+      <h1 className="home__title">
+        Hello <span className="home__title--accent">World!</span>
+      </h1>
+      <div className="home__aboutme">
+        <DescriptionText />
+        <div className="home__aboutme--facts home__text">
+          <Facts />
+          <AboutImage /> 
+        </div>
+      </div>
+    </>
+  )
+}
+
+function SkillGrid() {
+  let skillGrid = []
+  const skills = [
+    {
+      icon: 'fa-solid fa-server',
+      title: 'Backend Engineering',
+      description: "Experiences in optimization algorithms, data pipelines, and EC backend APIs. Loves Golang and Python, tolerates C++.",
+    },
+    {
+      icon: 'fa-solid fa-lightbulb',
+      title: 'Product Management',
+      description: 'Data-centric approach to product management by defining critical user journeys and implementing metrics feedback cyles.',
+    },
+    {
+      icon: "fa-solid fa-globe",
+      title: 'Bilingual',
+      description: 'Fluent in both Japanese and English to the level of navigating highly technical topics and documents.',
+    },
+    {
+      icon: 'fa-solid fa-face-laugh-beam',
+      title: 'People Person',
+      description: 'Excellent communicator with lots of experience in managing small to midsized teams.',
+    },
+  ]
+
+  for (let skill of skills) {
+    skillGrid.push(
+      <SkillBox key={skill.title} {...skill} />
+    )
+  }
+  return(
+    <>
+      <h1 className="home__title">
+        What <span className="home__title--accent">I Do</span>
+      </h1>
+      <div className="home__skills">
+        {skillGrid}
+      </div>
+    </>
+  )
+}
+
+function SkillBox({ icon, title, description }) {
+  return (
+      <div className="home__skills--box">
+        <i className={icon} />
+        <div className="home__subtitle">{title}</div>
+        <div className="home__text">{description}</div>
+      </div>
+  );
+}
+
+SkillBox.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default function Home() {
   return(
     <div className="home">
-    {/* <div className="home__section"> */}
-      <h1 className="home__title">
-        {/* Hello World, */}
-        Hello <span className="home__title--accent">World!</span>
-      </h1>
-
       <AboutMe />
-
-      <h1 className="home__title">
-        {/* Some Facts */}
-        Some <span className="home__title--accent">Facts</span>
-      </h1>
-      <ul className="home__list">
-        <li>
-          I&#39;ve worked as an econometrics RA in Chicago and Tokyo. 
-        </li>
-        <li>
-          I am a proud dog daddy. 
-        </li>
-        <li>
-          My project Carbon Calculator won a Google software contest in undergrad. 
-        </li>
-        <li>
-          My first computer program was an automated COVID vaccine reservation getter. 
-          I used this to help younger, busy people in Japan get vaccine reservations and campaigned for higher vaccination rates. 
-        </li>
-      </ul>
+      <SkillGrid />
     </div>
-    // </div>
   );
 }
