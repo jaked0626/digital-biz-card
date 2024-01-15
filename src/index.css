@@ -73,7 +73,7 @@ button:hover {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
-button:focus,
+/* button:focus, */
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
@@ -276,7 +276,7 @@ button:focus-visible {
 }
 
 .nav__container button:focus {
-  outline-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .main {
