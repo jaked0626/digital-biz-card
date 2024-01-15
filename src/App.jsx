@@ -6,18 +6,18 @@ import Squares from './components/Squares';
 import { useState } from 'react';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("Home");
+  const [activeTab, setActiveTab] = useState('Home');
 
   return (
     <>
       <main className="container">
         <div className="main">
           <Profile />
-          <ContentCard activeTab={activeTab}/>
+          <ContentCard activeTab={activeTab} />
         </div>
-        <Navbar setActiveTab={setActiveTab}/>
+        <Navbar setActiveTab={setActiveTab} />
       </main>
-      <Squares /> 
+      <Squares />
     </>
-  )
+  );
 }

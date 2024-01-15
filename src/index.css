@@ -23,7 +23,6 @@
   --accent-color: #c20002;
   --text-color: #0f0f0f;
   --test-color: purple;
-
 }
 
 /* hack to fix weird flexbox behavior */
@@ -50,7 +49,9 @@ body {
   min-width: 1400px;
   height: 110vh;
   min-height: 1000px;
-  background: var(--background-color);/*linear-gradient(226deg, #9EF475 19.5%, #D4FFC0 44.18%, rgba(192, 255, 198, 0.00) 95.62%); */
+  background: var(
+    --background-color
+  ); /*linear-gradient(226deg, #9EF475 19.5%, #D4FFC0 44.18%, rgba(192, 255, 198, 0.00) 95.62%); */
 }
 
 h1 {
@@ -91,7 +92,7 @@ button:focus-visible {
 }
 
 /* background */
-.shooting-squares{
+.shooting-squares {
   position: absolute;
   top: 0;
   left: 0;
@@ -100,7 +101,7 @@ button:focus-visible {
   overflow: hidden;
 }
 
-.shooting-squares li{
+.shooting-squares li {
   position: absolute;
   display: block;
   list-style: none;
@@ -112,15 +113,14 @@ button:focus-visible {
   z-index: 1;
 }
 
-.shooting-squares li:nth-child(1){
+.shooting-squares li:nth-child(1) {
   left: 5%;
   width: 20px;
   height: 20px;
   animation-delay: 0s;
 }
 
-
-.shooting-squares li:nth-child(2){
+.shooting-squares li:nth-child(2) {
   left: 10%;
   width: 20px;
   height: 20px;
@@ -129,14 +129,14 @@ button:focus-visible {
   background: var(--text-color);
 }
 
-.shooting-squares li:nth-child(3){
+.shooting-squares li:nth-child(3) {
   left: 70%;
   width: 20px;
   height: 20px;
   animation-delay: 4s;
 }
 
-.shooting-squares li:nth-child(4){
+.shooting-squares li:nth-child(4) {
   left: 40%;
   width: 30px;
   height: 30px;
@@ -145,21 +145,21 @@ button:focus-visible {
   background: var(--text-color);
 }
 
-.shooting-squares li:nth-child(5){
+.shooting-squares li:nth-child(5) {
   left: 65%;
   width: 20px;
   height: 20px;
   animation-delay: 0s;
 }
 
-.shooting-squares li:nth-child(6){
+.shooting-squares li:nth-child(6) {
   left: 75%;
   width: 30px;
   height: 30px;
   animation-delay: 3s;
 }
 
-.shooting-squares li:nth-child(7){
+.shooting-squares li:nth-child(7) {
   left: 35%;
   width: 40px;
   height: 40px;
@@ -167,7 +167,7 @@ button:focus-visible {
   background-color: var(--accent-color);
 }
 
-.shooting-squares li:nth-child(8){
+.shooting-squares li:nth-child(8) {
   left: 50%;
   width: 25px;
   height: 25px;
@@ -175,7 +175,7 @@ button:focus-visible {
   animation-duration: 45s;
 }
 
-.shooting-squares li:nth-child(9){
+.shooting-squares li:nth-child(9) {
   left: 20%;
   width: 15px;
   height: 15px;
@@ -184,7 +184,7 @@ button:focus-visible {
   background: var(--text-color);
 }
 
-.shooting-squares li:nth-child(10){
+.shooting-squares li:nth-child(10) {
   left: 90%;
   width: 30px;
   height: 30px;
@@ -193,7 +193,7 @@ button:focus-visible {
   background-color: var(--accent-color);
 }
 
-.shooting-squares li:nth-child(11){
+.shooting-squares li:nth-child(11) {
   left: 100%;
   width: 30px;
   height: 30px;
@@ -201,7 +201,7 @@ button:focus-visible {
   animation-duration: 11s;
 }
 
-.shooting-squares li:nth-child(12){
+.shooting-squares li:nth-child(12) {
   left: 85%;
   width: 20px;
   height: 20px;
@@ -210,15 +210,13 @@ button:focus-visible {
 }
 
 @keyframes animate {
-
-  0%{
-      transform: translateY(0px) rotate(0deg);
+  0% {
+    transform: translateY(0px) rotate(0deg);
   }
 
-  100%{
-      transform: translateY(-1500px) rotate(720deg);
+  100% {
+    transform: translateY(-1500px) rotate(720deg);
   }
-
 }
 
 .container {
@@ -284,6 +282,7 @@ button:focus-visible {
 .main {
   display: flex;
   height: 75%;
+  max-height: 700px;
   width: 75%;
   border-radius: 40px;
   background: var(--primary-color);
@@ -298,7 +297,8 @@ button:focus-visible {
   justify-content: flex-start;
   width: var(--profile-width-percent);
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .profile__photo {
@@ -311,7 +311,7 @@ button:focus-visible {
 
 .profile__name {
   display: flex;
-  color: #FFF;
+  color: #fff;
   font-family: Inter;
   font-size: 32px;
   font-style: normal;
@@ -329,7 +329,7 @@ button:focus-visible {
   margin-top: 0px;
   font-family: Inter;
   font-weight: 600;
-  color: #D9D9D9;
+  color: #d9d9d9;
   line-height: normal;
 }
 
@@ -358,7 +358,7 @@ button:focus-visible {
 .profile__button {
   display: flex;
   border-radius: 30px;
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
   color: white;
   background-color: var(--primary-color);
 }
@@ -399,7 +399,8 @@ button:focus-visible {
   font-weight: 900;
 }
 
-.home__subtitle, .home__subtitle--accent {
+.home__subtitle,
+.home__subtitle--accent {
   margin-top: 5px;
   margin-bottom: 3px;
   font-weight: 700;
@@ -413,13 +414,14 @@ button:focus-visible {
   color: var(--accent-color);
 }
 
-.home__text, .home__text--accent {
+.home__text,
+.home__text--accent {
   font-size: 17px;
-  line-height:24px;
+  line-height: 24px;
 }
 
 .home__text--accent {
-  color:var(--accent-color);
+  color: var(--accent-color);
   font-weight: 700;
 }
 
@@ -444,9 +446,9 @@ button:focus-visible {
 
 .home__aboutme--facts > img {
   margin-top: 0;
-  height: auto; 
-  width: auto; 
-  max-width: 200px; 
+  height: auto;
+  width: auto;
+  max-width: 200px;
   max-height: 300px;
 }
 
@@ -467,7 +469,7 @@ button:focus-visible {
   font-size: 20px;
   margin-right: 5%;
   margin-top: 0px;
-  line-height:24px;
+  line-height: 24px;
 }
 
 .home__list > li::marker {
@@ -496,4 +498,3 @@ button:focus-visible {
   margin-bottom: 8px;
   color: var(--accent-color);
 }
-
