@@ -1,5 +1,5 @@
-import DownloadButton from './profile_components/DownloadButton';
-import Socials from './profile_components/Socials';
+import DownloadButton from './DownloadButton';
+import Socials from './Socials';
 
 export default function Profile() {
   const base = import.meta.env.BASE_URL;

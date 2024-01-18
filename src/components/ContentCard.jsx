@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import Home from './Home';
+import Home from './home/Home';
 import Info from './Info';
-import History from './History';
+import History from './history/History';
 
 export default function ContentCard({ activeTab }) {
   return (

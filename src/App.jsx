@@ -1,7 +1,7 @@
 import ContentCard from './components/ContentCard';
-import Profile from './components/Profile';
-import Navbar from './components/Navbar';
-import Squares from './components/Squares';
+import Profile from './components/profile/Profile';
+import Navbar from './components/partials/Navbar';
+import Squares from './components/etc/Squares';
 
 import { useState } from 'react';
 
@@ -15,7 +15,7 @@ export default function App() {
           <Profile />
           <ContentCard activeTab={activeTab} />
         </div>
-        <Navbar setActiveTab={setActiveTab} />
+        <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
       </main>
       <Squares />
     </>

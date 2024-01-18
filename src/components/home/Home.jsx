@@ -1,5 +1,5 @@
-import AboutMe from './home_components/AboutMe';
-import SkillGrid from './home_components/SkillGrid';
+import AboutMe from './AboutMe';
+import SkillGrid from './SkillGrid';
 
 export default function Home() {
   return (
