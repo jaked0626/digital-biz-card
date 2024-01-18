@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 
-
 function SkillBox({ icon, title, description }) {
-    return (
-        <div className="home__skills--box">
+  return (
+    <div className="home__skills--box">
       <i className={icon} />
       <div className="home__subtitle">{title}</div>
       <div className="home__text">{description}</div>
@@ -12,9 +11,9 @@ function SkillBox({ icon, title, description }) {
 }
 
 SkillBox.propTypes = {
-    icon: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default function SkillGrid() {
