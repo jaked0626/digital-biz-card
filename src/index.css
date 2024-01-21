@@ -296,6 +296,8 @@ button.nav__tab--active {
   z-index: 100;
 }
 
+/* Profile */
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -369,6 +371,27 @@ button.nav__tab--active {
   background-color: var(--primary-color);
 }
 
+.profile__downloadlink {
+  color: grey;
+  font-size: 13px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.profile__downloadlink:hover {
+  color: var(--accent-color);
+}
+
+.profile__copyright {
+  justify-self: flex-end;
+  color: grey;
+  font-size: 12px;
+  margin-top: auto;
+  margin-bottom: 2;
+}
+
+/* Content */
+
 .content {
   display: flex;
   flex-direction: column;
@@ -382,7 +405,10 @@ button.nav__tab--active {
   overflow: auto;
 }
 
-.home {
+/* Home, Contact */
+
+.home,
+.contact {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -480,13 +506,22 @@ button.nav__tab--active {
   color: var(--accent-color);
 }
 
-.home__skills {
+.contact__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.home__skills,
+.contact__contacts--grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.home__skills--box {
+.home__skills--box,
+.contact__contacts--box {
   margin-top: 5px;
   width: 50%;
   padding: 16px;
@@ -494,7 +529,21 @@ button.nav__tab--active {
   text-align: center;
 }
 
-.home__skills--box > i {
+.contact__contacts--box {
+  margin: 0;
+  padding: 5px;
+}
+
+.contact__contacts--box a {
+  color: var(--text-color);
+}
+
+.contact__contacts--box a:hover {
+  color: var(--accent-color);
+}
+
+.home__skills--box i,
+.contact__contacts--box i {
   font-size: 48px;
   margin-bottom: 8px;
   color: var(--accent-color);

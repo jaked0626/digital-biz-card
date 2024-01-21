@@ -4,7 +4,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
   return (
     <nav className="nav__container">
       <ul>
-        <li>
+        <li title="Home">
           <button
             onClick={() => setActiveTab('Home')}
             className={activeTab === 'Home' ? 'nav__tab--active' : ''}
@@ -12,7 +12,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             <i className="fas fa-home"></i>
           </button>
         </li>
-        <li>
+        <li title="Resume">
           <button
             onClick={() => setActiveTab('History')}
             className={activeTab === 'History' ? 'nav__tab--active' : ''}
@@ -20,7 +20,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             <i className="fas fa-history"></i>
           </button>
         </li>
-        <li>
+        <li title="Projects">
           <button
             onClick={() => setActiveTab('Info')}
             className={activeTab === 'Info' ? 'nav__tab--active' : ''}
@@ -29,7 +29,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             <i className="fa-solid fa-folder"></i>
           </button>
         </li>
-        <li>
+        <li title="Contact">
           <button
             onClick={() => setActiveTab('Mail')}
             className={activeTab === 'Mail' ? 'nav__tab--active' : ''}

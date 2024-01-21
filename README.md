@@ -5,3 +5,4 @@
 - how to deploy: https://vitejs.dev/guide/static-deploy.html
 - url: https://jaked0626.github.io/digital-biz-card/
 - how i achieved the pixellated effect on my photos: https://pixel-me.tokyo/en/
+- [Getting started with the SendGrid API | Twilio](https://docs.sendgrid.com/for-developers/sending-email/api-getting-started)

@@ -13,6 +13,7 @@ export default function Profile() {
       <h2 className="profile__title">&#123;PdM/Engineer&#125;</h2>
       <Socials />
       <DownloadButton />
+      <p className="profile__copyright">Ⓒ 2024 Jake Underland </p>
     </div>
   );
 }
