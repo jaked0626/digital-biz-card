@@ -359,8 +359,14 @@ button.nav__tab--active {
 }
 
 .profile__button-link {
-  width: 60%;
-  margin-top: 25%;
+  width: auto;
+  margin-top: 35%;
+}
+
+.test {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile__button {

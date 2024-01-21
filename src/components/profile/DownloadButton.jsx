@@ -1,7 +1,7 @@
 export default function DownloadButton() {
   // supplying up to date resume directly sourced from github
   return (
-    <>
+    <div className="test">
       <a
         href="https://raw.githubusercontent.com/jaked0626/cv/main/jakeunderland_resume.pdf"
         className="profile__button-link"
@@ -21,6 +21,6 @@ export default function DownloadButton() {
       >
         Or, browse the CV on Github
       </a>
-    </>
+    </div>
   );
 }
