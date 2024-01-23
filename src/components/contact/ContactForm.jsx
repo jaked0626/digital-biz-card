@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import sendgrid from '@sendgrid/mail';
+import axios from 'axios';
 // import Cors from 'cors'
 
 // // Helper function to initialize middleware
@@ -135,31 +135,37 @@ function ContactForm() {
     setShowFailureMessage(false);
     setButtonText('Sending...');
     const emailHtml = makeEmail(fullname, email, subject, message);
-    const options = {
-      from: import.meta.env.VITE_WEBSITE_EMAIL,
-      to: import.meta.env.VITE_JAKE_EMAIL,
-      subject: `JAKESBIZCARD Incoming: ${subject}`,
-      html: emailHtml,
-    };
+    // const options = {
+    //   from: import.meta.env.VITE_WEBSITE_EMAIL,
+    //   to: import.meta.env.VITE_JAKE_EMAIL,
+    //   subject: `JAKESBIZCARD Incoming: ${subject}`,
+    //   html: emailHtml,
+    // };
 
-    console.log(options);
-
-    sendgrid
-      .send(options)
-      .then(() => {
-        resetForm();
-        setShowSuccessMessage(true);
-        setShowFailureMessage(false);
-        setButtonText('Send');
-        console.log(`Form successfully received from: ${email}`);
-      })
-      .catch(error => {
-        setShowSuccessMessage(false);
-        setShowFailureMessage(true);
-        setButtonText('Send');
-        console.log(error);
-        return;
-      });
+    axios.post('https://monkey-coding-blog.vercel.app/api/sendgrid', {
+      email: emailHtml,
+      fullname: fullname,
+      subject: subject,
+      message: message,
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(() => {
+      resetForm();
+      setShowSuccessMessage(true);
+      setShowFailureMessage(false);
+      setButtonText('Send');
+      console.log(`Form successfully received from: ${email}`);
+    })
+    .catch(error => {
+      setShowSuccessMessage(false);
+      setShowFailureMessage(true);
+      setButtonText('Send');
+      console.log(error);
+      return;
+    });
   };
 
   return (
