@@ -19,7 +19,11 @@ function ContactBox({ icon, text, link }) {
 ContactBox.propTypes = {
   icon: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  link: PropTypes.string.Optional,
+  link: PropTypes.string,
+};
+
+ContactBox.defaultProps = {
+  link: '',
 };
 
 export default function ContactGrid() {
@@ -30,13 +34,13 @@ export default function ContactGrid() {
       text: 'Tokyo, Japan',
     },
     {
+      icon: 'fa-solid fa-phone',
+      text: '(+81)9014618440',
+    },
+    {
       icon: 'fa-solid fa-envelope',
       text: 'jakez0626@gmail.com',
       link: 'mailto:jakez0626@gmail.com',
-    },
-    {
-      icon: 'fa-solid fa-phone',
-      text: '(+81)9014618440',
     },
     {
       icon: 'fa-solid fa-circle-check',
@@ -47,12 +51,9 @@ export default function ContactGrid() {
   for (let contact of contacts) {
     contactGrid.push(<ContactBox {...contact} />);
   }
-  console.log(contactGrid);
+
   return (
     <>
-      {/* <h1 className="home__title">
-        Contact <span className="home__title--accent">Me</span>
-      </h1> */}
       <div className="contact__contacts--grid">{contactGrid}</div>
     </>
   );

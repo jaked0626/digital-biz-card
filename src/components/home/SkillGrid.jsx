@@ -50,8 +50,8 @@ export default function SkillGrid() {
   }
   return (
     <>
-      <h1 className="home__title">
-        What <span className="home__title--accent">I Do</span>
+      <h1 className="title">
+        What <span className="title--accent">I Do</span>
       </h1>
       <div className="home__skills">{skillGrid}</div>
     </>

@@ -50,7 +50,7 @@ body {
   background: var(
     --background-color
   ); /*linear-gradient(226deg, #9EF475 19.5%, #D4FFC0 44.18%, rgba(192, 255, 198, 0.00) 95.62%); */
-  overflow-x: auto;
+  overflow-x: scroll;
   flex-wrap: wrap;
   overflow-y: hidden;
 }
@@ -220,6 +220,19 @@ button:focus-visible {
   }
 }
 
+/* common */
+
+.title {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.title--accent {
+  color: var(--accent-color);
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -232,6 +245,20 @@ button:focus-visible {
   min-height: 500px;
   background-color: var(--background-color);
 }
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  height: 75%;
+  max-height: 700px;
+  width: 75%;
+  border-radius: 40px;
+  background: var(--primary-color);
+  justify-content: space-between;
+  z-index: 100;
+}
+
+/* navigation */
 
 .nav__container {
   display: flex;
@@ -282,18 +309,6 @@ button:focus-visible {
 
 button.nav__tab--active {
   color: var(--accent-color);
-}
-
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  height: 75%;
-  max-height: 700px;
-  width: 75%;
-  border-radius: 40px;
-  background: var(--primary-color);
-  justify-content: space-between;
-  z-index: 100;
 }
 
 /* Profile */
@@ -358,18 +373,18 @@ button.nav__tab--active {
   color: var(--accent-color);
 }
 
-.profile__button-link {
+.profile__cv--button-link {
   width: auto;
   margin-top: 35%;
 }
 
-.test {
-  display:flex;
+.profile__cv--container {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.profile__button {
+.profile__cv--button {
   display: flex;
   border-radius: 30px;
   border: 2px solid #fff;
@@ -377,14 +392,14 @@ button.nav__tab--active {
   background-color: var(--primary-color);
 }
 
-.profile__downloadlink {
+.profile__cv--link {
   color: grey;
   font-size: 13px;
   margin-top: 10px;
   text-decoration: underline;
 }
 
-.profile__downloadlink:hover {
+.profile__cv--link:hover {
   color: var(--accent-color);
 }
 
@@ -431,13 +446,6 @@ button.nav__tab--active {
   width: 100%;
 }
 
-.home__title {
-  margin-top: 25px;
-  margin-bottom: 5px;
-  font-size: 36px;
-  font-weight: 900;
-}
-
 .home__subtitle,
 .home__subtitle--accent {
   margin-top: 5px;
@@ -446,10 +454,6 @@ button.nav__tab--active {
 }
 
 .home__subtitle--accent {
-  color: var(--accent-color);
-}
-
-.home__title--accent {
   color: var(--accent-color);
 }
 
@@ -512,11 +516,13 @@ button.nav__tab--active {
   color: var(--accent-color);
 }
 
-.contact__contacts {
+.contact__contacts,
+.contact__form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  margin-top: 10px;
+  align-items: center;
 }
 
 .home__skills,
@@ -536,7 +542,7 @@ button.nav__tab--active {
 }
 
 .contact__contacts--box {
-  margin: 0;
+  width: 40%;
   padding: 5px;
 }
 
@@ -555,12 +561,76 @@ button.nav__tab--active {
   color: var(--accent-color);
 }
 
+.contact__form--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 85%;
+}
+
+.contact__form--input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.contact__form--buttonElement {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.contact__form--input-container input,
+textarea {
+  font-family: monospace;
+  width: 100%;
+  padding: 2 3;
+  font-size: 16px;
+}
+
+.contact__form--buttonElement button {
+  background-color: var(--primary-color);
+  color: white;
+  margin-right: -5px;
+}
+
+.contact__form--buttonElement button:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+
+.contact__form--input-container .error-message {
+  align-self: flex-end;
+}
+
+.test {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flex1 {
+  margin-left: 20px;
+  flex: 1;
+}
+
 /* Experience section */
 
 .experience__job {
   display: flex;
   flex-direction: row;
-  /* justify-content: flex-start; */
 }
 
 .experience__job--main {

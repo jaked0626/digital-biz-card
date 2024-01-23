@@ -42,8 +42,8 @@ export default function Experience() {
   }
   return (
     <div className="experience__container">
-      <h1 className="home__title">
-        Experi<span className="home__title--accent">ence</span>
+      <h1 className="title">
+        Experi<span className="title--accent">ence</span>
       </h1>
       {jobs}
     </div>

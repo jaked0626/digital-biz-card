@@ -57,8 +57,8 @@ function AboutImage() {
 export default function AboutMe() {
   return (
     <>
-      <h1 className="home__title">
-        Hello <span className="home__title--accent">World!</span>
+      <h1 className="title">
+        Hello <span className="title--accent">World!</span>
       </h1>
       <div className="home__aboutme">
         <DescriptionText />

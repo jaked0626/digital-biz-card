@@ -25,8 +25,8 @@ export default function Education() {
   }
   return (
     <div className="education__container">
-      <h1 className="home__title">
-        Educa<span className="home__title--accent">tion</span>
+      <h1 className="title">
+        Educa<span className="title--accent">tion</span>
       </h1>
       {jobs}
     </div>
