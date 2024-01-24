@@ -1,78 +1,5 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
-// import Cors from 'cors'
-
-// // Helper function to initialize middleware
-// function initMiddleware(middleware) {
-//   return (req, res) =>
-//     new Promise((resolve, reject) => {
-//       middleware(req, res, (result) => {
-//         if (result instanceof Error) {
-//           return reject(result)
-//         }
-
-//         return resolve(result)
-//       })
-//     })
-// }
-
-// // Initialize the cors middleware
-// const cors = initMiddleware(
-//   Cors({
-//     methods: ['POST'],
-//     origin: ['http://localhost:5173', import.meta.env.VITE_SITE_URL], //TODO: replace * with deployed url
-//   })
-// );
-
-// sendgrid.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
-
-function makeEmail(fullname, email, subject, message) {
-  return `
-      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-      <html lang="en">
-        <head>
-          <meta charset="utf-8">
-          <title>Incoming Message</title>
-          <meta name="description" content="Message from MonkeyCoding">
-          <meta name="author" content="SitePoint">
-          <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
-          <link rel="stylesheet" href="css/styles.css?v=1.0">
-        </head>
-
-        <body>
-          <div class="container" style="margin-left: 20px;margin-right: 20px;">
-            <h3>New message from ${fullname}!</h3>
-            <table>
-              <tr>
-                <th>Name</th>
-                <td>${fullname}</td>
-              </tr>
-              <tr>
-                <th>Email</th>
-                <td>${email}</td>
-              </tr>
-              <tr>
-                <th>Subject</th>
-                <td>${subject}</td>
-              </tr>
-              <tr>
-                <th>Message</th>
-                <td><textarea name="message">${message}</textarea></td>
-              </tr>
-            </table>
-          </div>
-        </body>
-      </html>
-    `;
-}
-
-makeEmail.propTypes = {
-  fullname: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  subject: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-};
 
 function ContactForm() {
   const [fullname, setFullname] = useState('');
@@ -134,17 +61,10 @@ function ContactForm() {
     setShowSuccessMessage(false);
     setShowFailureMessage(false);
     setButtonText('Sending...');
-    const emailHtml = makeEmail(fullname, email, subject, message);
-    // const options = {
-    //   from: import.meta.env.VITE_WEBSITE_EMAIL,
-    //   to: import.meta.env.VITE_JAKE_EMAIL,
-    //   subject: `JAKESBIZCARD Incoming: ${subject}`,
-    //   html: emailHtml,
-    // };
 
-    axios.post('https://monkey-coding-blog.vercel.app/api/sendgrid', {
-      email: emailHtml,
+    axios.post('https://monkey-coding-blog.vercel.app/api/linemessage', {
       fullname: fullname,
+      email: email,
       subject: subject,
       message: message,
     }, {
