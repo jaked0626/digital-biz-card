@@ -17,10 +17,10 @@
 
   /* my defined values */
   --profile-width-percent: 28%;
-  --primary-color: #155831;
-  --secondary-color: #d7e4dc;
+  --primary-color: #1C6400;
+  --secondary-color: #FFFEDC;
   --background-color: #ffffff;
-  --accent-color: #c20002;
+  --accent-color: #FF3E3B;
   --text-color: #0f0f0f;
   --test-color: purple;
 }
@@ -600,14 +600,14 @@ textarea {
 }
 
 .contact__form--buttonElement button {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   color: white;
   margin-right: -5px;
 }
 
 .contact__form--buttonElement button:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .error-message {
