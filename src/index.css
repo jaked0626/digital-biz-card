@@ -687,6 +687,13 @@ textarea {
   margin: 0;
 }
 
+.experience__job--header a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+  text-decoration-thickness: 12%;
+}
+
+
 .experience__job--company {
   color: var(--text-color);
 }

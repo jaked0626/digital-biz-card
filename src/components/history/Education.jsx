@@ -4,6 +4,7 @@ export default function Education() {
   let jobsData = [
     {
       company: 'Waseda University',
+      link: 'https://en.wikipedia.org/wiki/Waseda_University',
       date: '2019-2023',
       role: 'Political Science and Economics',
       description:
@@ -12,6 +13,7 @@ export default function Education() {
     },
     {
       company: 'University of Chicago',
+      link: 'https://en.wikipedia.org/wiki/University_of_Chicago',
       date: '2021-2022',
       role: 'Economics',
       description:

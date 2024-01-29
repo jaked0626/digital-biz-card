@@ -4,6 +4,7 @@ export default function Experience() {
   let jobsData = [
     {
       company: 'Optimind Inc.',
+      link: 'https://www.optimind.tech/',
       date: '2023-Now',
       role: 'Backend Engineer/PM',
       description:
@@ -21,6 +22,7 @@ export default function Experience() {
     },
     {
       company: 'Morgan Stanley',
+      link: 'https://www.morganstanley.co.jp/en',
       date: '2022',
       role: 'IT Department Intern',
       description:
@@ -50,8 +52,15 @@ export default function Experience() {
   );
 }
 
-export function Job({ company, date, role, description, skills }) {
-  console.log(skills);
+export function Job({ company, link, date, role, description, skills }) {
+  const companyEl = link ? (
+    <a href={link} target="_blank" rel="noreferrer">
+      <h2 className="experience__job--company">{company}</h2>
+    </a>
+  ) : (
+    <h2 className="experience__job--company">{company}</h2>
+  );
+
   let skillTags = [];
   for (let skill of skills) {
     skillTags.push(<p className="tag">{skill}</p>);
@@ -60,7 +69,7 @@ export function Job({ company, date, role, description, skills }) {
     <div className="experience__job">
       <div className="experience__job--main">
         <div className="experience__job--header">
-          <h2 className="experience__job--company">{company}</h2>
+          {companyEl}
           <p className="experience__job--date">{date}</p>
         </div>
         <div className="experience__job--details">
@@ -77,8 +86,13 @@ export function Job({ company, date, role, description, skills }) {
 
 Job.propTypes = {
   company: PropTypes.string.isRequired,
+  link: PropTypes.string,
   date: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+Job.defaultProps = {
+  link: '',
 };
